@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Florella – React Web Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Florella is a React-based e-commerce storefront for a fictional flower and cake boutique, built as a HyperionDev Capstone Project. Visitors can browse products, register and log in, add items to a cart, choose a shipping method, and get help understanding shipping options — all powered by Redux for state management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Landing, About, Contact, Store, and Cart pages**, with a persistent header and navigation menu on every route.
+- **Registration** with validated fields — first name, surname, username, email, and a password that must meet strength requirements (uppercase, lowercase, number, special character).
+- **Login/logout**, with the logged-in username stored in Redux and displayed in the header.
+- **Product catalog** rendered dynamically with `array.map()`, each item keyed uniquely.
+- **Shopping cart** — add, remove, and adjust quantities, with the running subtotal calculated live via Redux.
+- **Shipping selection** (Standard or Express), each with its own cost added to the order total.
+- **Help popup** explaining what each shipping option includes.
+- Custom CSS styling throughout, no external UI framework required.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://react.dev/) (via Create React App)
+- [React Router](https://reactrouter.com/) for page navigation
+- [Redux Toolkit](https://redux-toolkit.js.org/) + React-Redux for state management
+- [Formik](https://formik.org/) + [Yup](https://github.com/jquense/yup) for form handling and validation
+- [React Modal](https://reactcommunity.org/react-modal/) for the registration success popup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You'll need [Node.js](https://nodejs.org/) (v18 or later recommended) and npm installed. Check your versions with:
 
-### `npm run build`
+```bash
+node -v
+npm -v
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone this repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/Stephels/florella-web-store.git
+   ```
 
-### `npm run eject`
+2. Move into the project folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   cd florella-web-store
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the development server:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. The app should open automatically at [http://localhost:3000](http://localhost:3000). If it doesn't, open that address in your browser manually.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Using the App
 
-### Code Splitting
+- Browse the **Store** page to view flowers ("Blooms") and cakes ("Bakes").
+- Pick a type from the dropdown on a product card, then click **Add to Cart**.
+- Visit the **Cart** page to review your items, adjust quantities, choose a shipping method, and click **Help** if you're unsure which shipping option to pick.
+- Click **Register** to create an account, then **Log In** with your new username and password — once logged in, your username appears in the header along with a **Log Out** option.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+src/
+├─ Components/   # Page and UI components (Header, Footer, Cart, Products, Login, Register, etc.)
+├─ Redux/        # Redux slices and store configuration (user, cart, products)
+├─ Styles/       # Component-specific CSS files
+├─ Data/         # Static product data
+├─ Images/       # Product photos, icons, and logos
+├─ Fonts/        # Custom font files
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Stephanie Hochfelden
