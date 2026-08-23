@@ -1,0 +1,163 @@
+.contact-page {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f0eeee;
+}
+
+.contact-page h1 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+.contact-page p {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Parallax Background */
+.contact-parallax {
+  position: relative;
+  height: 100vh;
+  background: url("../Images/Hero\ 3.jpeg") center center / cover no-repeat;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+.parallax-content h1 {
+  margin: 0;
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.parallax-content p {
+  font-size: 1.25rem;
+  color: #f0e6e6;
+}
+
+.form-container {
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 40px 20px; /* Add spacing inside the form */
+}
+
+.contact-form {
+  margin-top: 40px;
+  min-width: 600px;
+  background-color: none;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #385c96;
+  box-shadow: 0 0 4px #8db7f3;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #b1a293;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #806652;
+  transform: scale(1.05);
+}
+
+.contact-form select,
+.modal {
+  display: block; /* Ensure dropdown block is display */
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-message {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #dff0d8;
+  border-radius: 5px;
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,139 @@
+.newsletter-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #e9ebec;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  max-height: 800px;
+  border-top: #b89882 solid 1px;
+  border-bottom: #b89882 solid 1px;
+}
+
+.newsletter-content {
+  display: flex;
+  flex: 1;
+}
+
+.newsletter-image {
+  flex: 1;
+  height: auto;
+  overflow: hidden;
+}
+
+.newsletter-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.newsletter-form h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.newsletter-form p {
+  margin-bottom: 40px;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.signup-form input:focus {
+  border-color: #385c96;
+  box-shadow: 0 0 5px #8db7f3;
+  outline: none;
+}
+
+button.register-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #d4b19a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+button.register-btn:hover {
+  background-color: #806652;
+  transform: scale(1.05);
+}
+
+.error {
+  color: #ff5757;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #dff0d8;
+  border-radius: 5px;
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

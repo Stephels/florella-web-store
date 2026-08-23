@@ -1,0 +1,184 @@
+/* src/Styles/about.css */
+
+/* General styles for the About page */
+.about-page {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+/* Hero section: Parallax background */
+.about-parallax {
+  position: relative;
+  height: 100vh;
+  background: url("../Images/Hero\ 2.jpeg") center center / cover no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.parallax-content h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+/* About Section */
+#about-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-columns {
+  display: flex; /* Enable Flexbox for the two columns */
+  flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
+  align-items: center; /* Vertically align image and text */
+  gap: 40px; /* Add spacing between the columns */
+}
+
+/* Left Column - Image */
+.about-image {
+  flex: 1; /* Take up 1 portion of the available space */
+  min-width: 600px; /* Optional: Set a max width for the image */
+  text-align: center; /* Ensure the image is centered inside this column */
+}
+
+.about-image img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+/* Right Column - Text */
+.about-text {
+  flex: 2; /* Take up 2 portions of the available space */
+  text-align: left; /* Left-align the text */
+  padding: 40px;
+  margin: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #b1a293;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+/* Accolades Section for Gen-Z Audience */
+.Accolades {
+  background-color: #e9ebec;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Heading with a modern and elegant font style */
+.Accolades h2 {
+  letter-spacing: 2px;
+  font-size: 4rem;
+  font-family:
+    "Amsterdam-handwriting", sans-serif; /* Use Poppins for a modern look */
+  color: #333;
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.Accolades-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px; /* Increase gap for more spacing */
+  align-items: flex-start;
+}
+
+.Accolades p {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: #b1a293;
+  margin-bottom: 20px;
+  font-family: "Montserrat", serif; /* Use Lora for a classic yet fresh look */
+}
+
+.Accolades-column-1,
+.Accolades-column-2 {
+  flex: 1;
+  max-width: 420px;
+  padding: 26px;
+  text-align: left;
+  transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.Accolades-column-1:hover,
+.Accolades-column-2:hover {
+  transform: translateY(-10px); /* Lifting effect on hover */
+}
+
+.Accolades ol {
+  list-style: none; /* Remove default list styling */
+  padding-left: 0; /* Remove left padding */
+  counter-reset: list-counter year-counter; /* Initialize a counter called "list-counter" and "year-counter" */
+}
+
+.Accolades li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+  position: relative; /* Allow positioning of pseudo-elements */
+}
+
+.Accolades li:before {
+  content: counter(year-counter); /* Display the counter value */
+  counter-increment: year-counter 1; /* Increment by one for years */
+  position: absolute;
+  left: -90px; /* Adjust this to position the year */
+  font-weight: bold;
+  font-size: 1rem;
+  color: #b1a293; /* Highlight the year with a distinct color */
+  font-family:
+    "Amsterdam-handwriting", sans-serif; /* Use a modern font for the year */
+  letter-spacing: 2.5px;
+}
+
+.Accolades li:nth-child(1):before {
+  content: "2020"; /* Specific year for first item */
+}
+
+.Accolades li:nth-child(2):before {
+  content: "2021"; /* Specific year for second item */
+}
+
+.Accolades li:nth-child(3):before {
+  content: "2022"; /* Specific year for third item */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .Accolades-content {
+    flex-direction: column;
+  }
+
+  .Accolades-column-1,
+  .Accolades-column-2 {
+    width: 100%;
+    max-width: none;
+  }
+}
