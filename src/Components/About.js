@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../Styles/about.css";
 import ProductionImage from "../Images/Mic.jpg";
-import logo from "../Images/Logo/Florella-black.svg"; // Import the Florella logo
+import logo from "../Images/Logo/Florella-black.svg";
 import Newsletter from "./Newsletter";
 import Footer from "./Footer";
 
@@ -54,6 +54,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      {/* Accolades Section */}
       <section className="Accolades">
         <div className="Accolades-header">
           <img src={logo} alt="Florella Logo" className="florella-logo" />

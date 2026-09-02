@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../Redux/cartSlice";
-import { productData } from "../Data/productsData";
 import Footer from "./Footer";
 import "../Styles/products.css";
 import waveTop from "../Images/wave-top.svg";
@@ -11,9 +10,15 @@ const Products = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // Get the product data from the Redux store
+  const productData = useSelector((state) => state.products.items);
+  // State to keep track of the selected type for each product
   const [selectedType, setSelectedType] = useState({});
+  // State to control the visibility of the "Go to Cart" button
   const [showCartButton, setShowCartButton] = useState(false);
-
+  // Keeps track of which products the user tried to add to cart without picking a type first, so I can show a warning under those ones.
+  const [typeErrors, setTypeErrors] = useState({});
+  // State to control the visibility of the "Go to Cart" button
   useEffect(() => {
     if (location.hash) {
       const section = document.querySelector(location.hash);
@@ -22,32 +27,40 @@ const Products = () => {
       }
     }
   }, [location]);
-
+  // Function to handle type selection for a product
   const handleTypeChange = (productId, type) => {
     setSelectedType((prevState) => ({
       ...prevState,
       [productId]: type,
     }));
   };
-
+  // Function to handle adding a product to the cart
   const handleAddToCart = (product) => {
+    // Check if a type has been selected for the product, else don't add it to the cart and show a warning under that product.
+    if (!selectedType[product.id]) {
+      setTypeErrors((prevState) => ({ ...prevState, [product.id]: true }));
+      return;
+    }
+    // If a type has been selected, clear any previous error for that product and add it to the cart
+    setTypeErrors((prevState) => ({ ...prevState, [product.id]: false }));
+
     dispatch(
       addItem({
         id: product.id,
         name: product.name,
         price: product.price,
         image: product.image,
-        type: selectedType[product.id] || "Select Type",
+        type: selectedType[product.id],
       }),
     );
     setShowCartButton(true); // Show the button after adding to cart
     setTimeout(() => setShowCartButton(false), 5000); // Hide after 5 seconds
   };
-
+  // Function to navigate to the cart page
   const handleGoToCart = () => {
     navigate("/cart");
   };
-
+  // Filter products into blooms and bakes based on their names
   const blooms = productData.filter(
     (product) =>
       product.name.toLowerCase().includes("flower") ||
@@ -63,7 +76,7 @@ const Products = () => {
       product.name.toLowerCase().includes("aisle") ||
       product.name.toLowerCase().includes("bouquet"),
   );
-
+  // Filter products into bakes based on their names
   const bakes = productData.filter(
     (product) =>
       product.name.toLowerCase().includes("cake") ||
@@ -121,12 +134,15 @@ const Products = () => {
                       }
                     >
                       <option value="">Select Type</option>
-                      <option value="small bunch">Small Bunch</option>
-                      <option value="medium bunch">Medium Bunch</option>
-                      <option value="large bunch">Large Bunch</option>
-                      <option value="Bridal bunch">Bridal Bunch</option>
-                      <option value="Groom lepal">Groom Lepal</option>
+                      {product.types.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
                     </select>
+                    {typeErrors[product.id] && (
+                      <p className="type-error">Please select a type first.</p>
+                    )}
                   </div>
 
                   <button
@@ -172,11 +188,15 @@ const Products = () => {
                       }
                     >
                       <option value="">Select Type</option>
-                      <option value="Mini Cake">Mini Cake</option>
-                      <option value="Occasion Cake">Occasion Cake</option>
-                      <option value="Simple Cake">Simple Cake</option>
-                      <option value="Bridal Cake">Bridal Cake</option>
+                      {product.types.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
                     </select>
+                    {typeErrors[product.id] && (
+                      <p className="type-error">Please select a type first.</p>
+                    )}
                   </div>
 
                   <button

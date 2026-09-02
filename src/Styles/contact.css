@@ -14,7 +14,7 @@
   text-transform: uppercase;
   font-size: 4rem;
 }
-.contact-page p {
+.form-container p {
   color: #333;
   font-size: 1.2rem;
 }
@@ -47,12 +47,11 @@
 }
 
 .form-container {
-  display: flex; /* Use Flexbox */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center children horizontally */
-
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 40px 20px; /* Add spacing inside the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .contact-form {
@@ -119,7 +118,7 @@ textarea:focus {
 
 .contact-form select,
 .modal {
-  display: block; /* Ensure dropdown block is display */
+  display: block;
   margin: 10px 0;
   padding: 5px;
 }
@@ -159,5 +158,51 @@ textarea:focus {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1024px) {
+  .contact-form {
+    min-width: 0;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .parallax-content h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page h1 {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
+
+  .parallax-content h1 {
+    font-size: 3rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-container {
+    padding: 30px 15px;
+  }
+
+  .contact-parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .form-container p {
+    font-size: 1rem;
   }
 }

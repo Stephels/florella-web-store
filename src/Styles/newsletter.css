@@ -137,3 +137,28 @@ button.register-btn:hover {
     transform: translateY(0);
   }
 }
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  .newsletter-section {
+    max-height: none;
+  }
+
+  .newsletter-content {
+    flex-direction: column;
+  }
+
+  .newsletter-image {
+    height: 250px;
+  }
+
+  .newsletter-form {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
+
+  .newsletter-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}

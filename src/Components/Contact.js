@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Footer from "./Footer"; // Import Footer component
-import "../Styles/contact.css"; // Create/contact styles based on your design
+import Footer from "./Footer";
+import "../Styles/contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,24 +10,39 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  // State to keep track of form errors for each field
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false); // Change from modal state to submitted state
-  const [selectedCountryCode, setSelectedCountryCode] = useState("+1"); // Default to US
+  const [submitted, setSubmitted] = useState(false);
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+1");
 
   const countryCodes = [
     { code: "+27", name: "South Africa" },
     { code: "+1", name: "United States" },
     { code: "+44", name: "United Kingdom" },
     { code: "+91", name: "India" },
-    // Add more countries as needed
+    { code: "+61", name: "Australia" },
+    { code: "+81", name: "Japan" },
+    { code: "+49", name: "Germany" },
+    { code: "+33", name: "France" },
+    { code: "+39", name: "Italy" },
+    { code: "+55", name: "Brazil" },
+    { code: "+7", name: "Russia" },
+    { code: "+34", name: "Spain" },
+    { code: "+46", name: "Sweden" },
+    { code: "+31", name: "Netherlands" },
+    { code: "+41", name: "Switzerland" },
+    { code: "+82", name: "South Korea" },
+    { code: "+86", name: "China" },
+    { code: "+64", name: "New Zealand" },
+    { code: "+20", name: "Egypt" },
   ];
-
+  // Function to handle changes in the form fields. It updates the formData state and validates the field that was changed.
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     validateField(name, value);
   };
-
+  // Function to validate individual form fields based on their name and value. It sets error messages in the errors state for any invalid fields.
   const validateField = (name, value) => {
     let errorMsg = "";
 
@@ -60,7 +75,7 @@ const Contact = () => {
       default:
         break;
     }
-
+    // Update the errors state with the new error message for the specific field
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: errorMsg,
@@ -68,7 +83,7 @@ const Contact = () => {
 
     return errorMsg;
   };
-
+  // Function to handle form submission. It validates all fields, shows a thank-you message if everything is valid, and clears the form data.
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -86,7 +101,7 @@ const Contact = () => {
       return;
     }
 
-    // Set submitted to true instead of opening a modal
+    // Everything passed, so show the thank-you message
     setSubmitted(true);
 
     // Clear form data
@@ -99,7 +114,7 @@ const Contact = () => {
     });
     setErrors({});
   };
-
+  // Function to handle changes in the country code selection. It updates the selectedCountryCode state with the new value.
   const handleCountryCodeChange = (e) => {
     setSelectedCountryCode(e.target.value);
   };

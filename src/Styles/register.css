@@ -27,7 +27,7 @@ h2 {
 
 .form-group {
   margin-bottom: 20px;
-  position: relative; /* Ensure the toggle button is positioned relative to the form group */
+  position: relative;
 }
 
 label {
@@ -91,13 +91,13 @@ button.register-btn:hover {
 }
 
 .switch-link a {
-  color: #ff6f61;
+  color: #385c96;
   text-decoration: none;
   font-weight: bold;
 }
 
 .switch-link a:hover {
-  color: #e55c50;
+  color: #8db7f3;
   text-decoration: none;
 }
 
@@ -111,9 +111,21 @@ button.register-btn:hover {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding-right: 50px; /* Add padding to the right for the icon */
+  padding-right: 50px;
   box-sizing: border-box;
   transition:
     border-color 0.3s,
     box-shadow 0.3s;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 24px;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
 }

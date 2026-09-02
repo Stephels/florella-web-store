@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import "../Styles/footer.css"; // Import specific styling for the footer
-
+import "../Styles/footer.css";
+// Footer component that displays the footer section of the website. It includes a copyright notice and a "Terms and Policies" link that shows a popup with links to the Privacy Policy, Terms of Service, and Contact Information when hovered over.
 const Footer = () => {
-  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
-
+  const [showPopup, setShowPopup] = useState(false);
+  // Function to handle mouse enter event on the "Terms and Policies" link. It sets the showPopup state to true, which displays the popup.
   const handleMouseEnter = () => {
-    // Show popup when mouse enters the footer link or popup
     setShowPopup(true);
   };
-
+  //  Function to handle mouse leave event on the "Terms and Policies" link. It checks if the mouse is moving to an element that is not part of the footer links or the popup. If so, it sets the showPopup state to false, which hides the popup.
   const handleMouseLeave = (e) => {
-    // Check if the mouse is leaving both the footer link and the popup
     const relatedTarget = e.relatedTarget;
     if (
       !relatedTarget ||
@@ -19,7 +17,7 @@ const Footer = () => {
         relatedTarget.closest(".popup")
       )
     ) {
-      setShowPopup(false); // Hide popup if mouse is leaving both areas
+      setShowPopup(false);
     }
   };
 
@@ -27,20 +25,18 @@ const Footer = () => {
     <section id="footer">
       <div className="footer-container">
         <p className="footer-text">© Florella 2026. Website Designed by SLH.</p>
-        {/* Footer Links Trigger */}
         <div
           className="footer-links"
-          onMouseEnter={handleMouseEnter} // Show popup
-          onMouseLeave={handleMouseLeave} // Check if mouse is leaving both areas
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <span className="popup-link">Terms and Policies</span>
         </div>
-        {/* Popup Content */}
         {showPopup && (
           <div
             className="popup"
-            onMouseEnter={handleMouseEnter} // Keep popup visible when hovering
-            onMouseLeave={handleMouseLeave} // Check if mouse is leaving both areas
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="popup-content">
               <a href="/privacy">Privacy Policy</a>

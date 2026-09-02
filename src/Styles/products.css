@@ -28,8 +28,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* Adjust based on your design needs */
-  background-image: url("../Images/wave-top.svg"); /* Linking to your SVG */
+  height: 150px;
+  background-image: url("../Images/wave-top.svg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
@@ -40,7 +40,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: auto; /* Automatically adjust height */
+  height: auto;
 }
 
 .bakes-section {
@@ -177,6 +177,13 @@
   outline: none;
 }
 
+.type-error {
+  color: #ff5757;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-align: left;
+}
+
 .add-to-cart-btn {
   width: 150px;
   margin: 4px;
@@ -248,5 +255,59 @@
   to {
     opacity: 0;
     transform: translateY(-10px); /* End slightly above */
+  }
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1024px) {
+  .parallax-content h1 {
+    font-size: 4rem;
+  }
+
+  .blooms-section h2,
+  .bakes-section h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-content h1 {
+    font-size: 3rem;
+  }
+
+  .blooms-section h2,
+  .bakes-section h2 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+  }
+
+  .blooms-content p,
+  .bakes-content p {
+    margin-bottom: 30px;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .products-parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .blooms-section h2,
+  .bakes-section h2 {
+    font-size: 2rem;
+  }
+
+  .go-to-cart-btn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
   }
 }

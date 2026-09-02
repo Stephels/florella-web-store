@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 155%;
-  z-index: -1; /* Keeps the image behind other content */
+  z-index: -1;
   opacity: 0.8;
 }
 
@@ -97,4 +97,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1024px) {
+  .florella-logo {
+    width: 380px;
+    height: auto;
+  }
+
+  .hero p {
+    font-size: 3rem;
+  }
+
+  .row-2 {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 6rem;
+  }
+
+  .florella-logo {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .hero p {
+    font-size: 2.2rem;
+  }
+
+  .row-2 {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .blooms-col-2 p {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .florella-logo {
+    max-width: 220px;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .blooms-btn,
+  .bakes-btn {
+    font-size: 0.7rem;
+    padding: 0.7rem 1.4rem;
+  }
 }

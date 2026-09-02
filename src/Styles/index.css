@@ -1,4 +1,4 @@
-/* Reset styles for consistency */
+/* Global styles for consistency */
 * {
   margin: 0;
   padding: 0;
@@ -9,28 +9,29 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensures the body spans the full height of the viewport */
+  height: 100%;
+  overflow-x: hidden;
 }
 
 #root {
-  height: 100%; /* Ensures the React container fills the viewport */
+  height: 100%;
 }
 
-/* Define the Amsterdam-handwriting font */
+/* Amsterdam-handwriting font */
 @font-face {
   font-family: "Amsterdam-handwriting";
   src: url("../Fonts/amsterdam-handwriting/Amsterdam Handwriting.ttf")
     format("truetype");
 }
 
-/* Define the Satoshi font */
+/* Satoshi font */
 @font-face {
   font-family: "Montserrat";
   src: url("../Fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
 }
 
-/* Apply default body font */
+/* Default body font */
 body {
   font-family:
     "Montserrat",
@@ -49,7 +50,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Apply Amsterdam-handwriting specifically to headers or decorative text */
 h1,
 h2,
 h3 {

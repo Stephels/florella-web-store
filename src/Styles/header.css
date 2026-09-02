@@ -43,28 +43,27 @@ header.header.scrolled {
 }
 
 .cart-link {
-  display: flex; /* Align the icon and the count horizontally */
-  align-items: center; /* Center vertically */
-  gap: 5px; /* Space between the icon and count */
-  color: #fff; /* Text/icon color */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
 }
 
 .cart-icon {
   padding: 1px;
-  width: 26px; /* Adjust size as needed */
-  height: 26px; /* Adjust size as needed */
+  width: 26px;
+  height: 26px;
   filter: invert(1); /* Make the SVG icon white */
 }
 
 .cart-link:hover .cart-icon {
-  fill: #967668; /* Directly apply the desired hover color */
+  fill: #967668;
 }
 
 .cart-count {
   padding: 2px;
   font-size: 1rem;
   color: #fff;
-  /* font-weight: bold; */
 }
 
 .header-user .auth-links {
@@ -101,7 +100,7 @@ header.header.scrolled {
 }
 
 .header-user strong {
-  color: #fff; /* Highlight the username in a different color */
+  color: #fff;
 }
 
 .logout-btn {
@@ -122,4 +121,89 @@ header.header.scrolled {
 
 .logout-btn:hover {
   background-color: #967668;
+}
+
+/* Hamburger button only shown on small screens */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .header-nav {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 1.2rem;
+  }
+
+  .header-logo-img {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header.menu-open {
+    background-color: #b1a293;
+  }
+
+  .header-nav,
+  .header-user {
+    display: none;
+  }
+
+  .header.menu-open .header-nav,
+  .header.menu-open .header-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .header.menu-open .header-user {
+    justify-content: flex-start;
+  }
+
+  .header.menu-open .header-user .auth-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo-img {
+    height: 50px;
+  }
+
+  .nav-link,
+  .auth-links a {
+    font-size: 1rem;
+  }
 }

@@ -171,7 +171,40 @@
 }
 
 /* Responsive Design for smaller screens */
+@media (max-width: 1024px) {
+  /* This min-width was forcing the image column to stay 600px wide no
+     matter how narrow the screen got, which pushed the page into
+     horizontal scrolling on tablets and phones. Letting it shrink with
+     the column instead fixes that. */
+  .about-image {
+    min-width: 0;
+    flex-basis: 45%;
+  }
+
+  .parallax-content h1 {
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .about-columns {
+    flex-direction: column;
+  }
+
+  .about-image {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .about-text {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .Accolades h2 {
+    font-size: 2.5rem;
+  }
+
   .Accolades-content {
     flex-direction: column;
   }
@@ -180,5 +213,35 @@
   .Accolades-column-2 {
     width: 100%;
     max-width: none;
+  }
+
+  .Accolades li:before {
+    left: -60px;
+  }
+
+  /* background-attachment: fixed is unreliable on mobile browsers
+     (particularly iOS Safari), so switch to normal scrolling here. */
+  .about-parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-content h1 {
+    font-size: 2rem;
+  }
+
+  .Accolades h2 {
+    font-size: 2rem;
+  }
+
+  .Accolades p {
+    font-size: 1.3rem;
+  }
+
+  .Accolades li:before {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
   }
 }

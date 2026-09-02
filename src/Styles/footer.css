@@ -1,54 +1,54 @@
 #footer {
   margin: 0;
-  padding: 20px 30px; /* Add padding inside the footer */
-  background-color: #fff; /* Ensure a clean background color */
+  padding: 20px 30px;
+  background-color: #fff;
   position: relative;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Space out content: text on the left, links on the right */
-  align-items: center; /* Vertically center the elements */
-  flex-wrap: wrap; /* Ensure elements wrap in smaller screens */
-  gap: 10px; /* Add spacing between elements */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .footer-text {
   font-family: Arial, Helvetica, sans-serif;
-  color: #806652; /* Warm brown color */
+  color: #806652;
   text-transform: uppercase;
   font-size: 1rem;
   text-align: left;
-  margin: 0; /* Reset margin for perfect alignment */
+  margin: 0;
 }
 
 .footer-links {
-  position: relative; /* Keep this for the popup positioning */
+  position: relative;
   cursor: pointer;
-  color: #806652; /* Match the footer-text color */
+  color: #806652;
   text-transform: uppercase;
-  margin: 0; /* Reset margin */
+  margin: 0;
 }
 
 .footer-links span {
-  padding: 10px 15px; /* Add padding for clickable area */
-  border-radius: 5px; /* Optional: smoother edge for the link */
+  padding: 10px 15px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .footer-links span:hover {
-  background-color: #f4f4f4; /* Light background effect on hover */
+  background-color: #f4f4f4;
 }
 
 .popup {
   position: absolute;
-  bottom: 50px; /* Increased to leave more space above footer */
+  bottom: 50px;
   right: 0;
-  background-color: #fff; /* White background to match footer */
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 6px;
-  width: 250px; /* Wider popup for more spacing */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a clean shadow */
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
   overflow: hidden;
 }
@@ -56,22 +56,22 @@
 .popup-content {
   display: flex;
   flex-direction: column; /* Stack links vertically */
-  padding: 10px; /* Space around the content */
+  padding: 10px;
 }
 
 .popup a {
   display: block;
   color: #806652;
   text-decoration: none;
-  margin: 4px 0; /* Add spacing between links */
-  padding: 12px; /* Increased padding for larger clickable area */
-  border-radius: 5px; /* Add rounded corners to links */
+  margin: 4px 0;
+  padding: 12px;
+  border-radius: 5px;
   text-align: left;
-  font-size: 0.9rem; /* Slightly larger font for better readability */
+  font-size: 0.9rem;
 }
 
 .popup a:hover {
-  background-color: #b4aea7; /* Change background on hover */
+  background-color: #b4aea7;
   text-decoration: none;
 }
 

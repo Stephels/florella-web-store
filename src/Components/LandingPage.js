@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "../Styles/landing.css"; // Import custom CSS
-import heroImage from "../Images/Hero 3.jpeg"; // Import the hero image
-import logo from "../Images/Logo/Florella-white.png"; // Import the Florella logo
+import "../Styles/landing.css";
+import heroImage from "../Images/Hero 3.jpeg";
+import logo from "../Images/Logo/Florella-white.png";
 
 const LandingPage = () => {
   return (

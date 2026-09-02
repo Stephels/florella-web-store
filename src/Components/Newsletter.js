@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import { Formik, Form, Field, ErrorMessage } from "formik"; // Importing Formik components for form handling and validation
+import * as Yup from "yup"; //
 import "../Styles/newsletter.css";
 
 const Newsletter = () => {
-  const [submitted, setSubmitted] = useState(false);
-
+  const [submitted, setSubmitted] = useState(false); // State to track whether the form has been submitted successfully
+  // Validation schema for the newsletter form using Yup. It defines the required fields and their validation rules.
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),

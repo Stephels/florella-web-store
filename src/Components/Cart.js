@@ -1,4 +1,3 @@
-// cart.js
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,26 +7,28 @@ import {
   setShippingMethod,
 } from "../Redux/cartSlice";
 import "../Styles/cart.css";
-import Help from "./Help"; // Import the Help component here
+import Help from "./Help";
 
+// This component displays the shopping cart page. It shows the items in the cart, allows users to add or remove items, select a shipping method, and view the order summary including subtotal, shipping cost, and total amount. Users can also reset the cart to remove all items.
 const Cart = () => {
   const { items, totalAmount, shippingMethod, shippingCost } = useSelector(
     (state) => state.cart,
   );
+  // Get the dispatch function from Redux to dispatch actions to the store
   const dispatch = useDispatch();
-
-  const handleRemoveItem = (id) => {
-    dispatch(removeItem({ id, quantity: 1 }));
+  // Function to handle removing an item from the cart. It dispatches the removeItem action with the item's id, type, and quantity to remove one unit of that item from the cart.
+  const handleRemoveItem = (id, type) => {
+    dispatch(removeItem({ id, type, quantity: 1 }));
   };
-
+  // Function to handle adding an item to the cart. It dispatches the addItem action with the item's id, type, and price.
   const handleAddItem = (id, type, price) => {
     dispatch(addItem({ id, type, price }));
   };
-
+  // Function to handle resetting the cart. It dispatches the resetCart action to remove all items from the cart.
   const handleReset = () => {
     dispatch(resetCart());
   };
-
+  //  Function to handle changing the shipping method. It updates the shipping method and cost in the Redux store based on the selected option from the dropdown menu.
   const handleShippingChange = (e) => {
     const selectedMethod = e.target.value;
     let cost = 0;
@@ -57,7 +58,9 @@ const Cart = () => {
                     <p>
                       R{item.price.toFixed(2)} x {item.quantity}
                     </p>
-                    <button onClick={() => handleRemoveItem(item.id)}>
+                    <button
+                      onClick={() => handleRemoveItem(item.id, item.type)}
+                    >
                       Remove
                     </button>
                     <button
@@ -82,7 +85,7 @@ const Cart = () => {
                   <option value="Express Shipping">Express Shipping</option>
                 </select>
               </p>
-              <Help /> {/* Include the Help component here */}
+              <Help />
               <p>Shipping Cost: R{shippingCost.toFixed(2)}</p>
               <p>
                 <strong>

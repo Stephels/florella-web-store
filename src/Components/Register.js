@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { registerUser } from "../Redux/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/register.css";
-
 import showIcon from "../Images/Icons/show.png";
 import hideIcon from "../Images/Icons/hide.png";
 
@@ -26,14 +25,14 @@ const customStyles = {
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
   },
 };
-
+// Set the app element for accessibility. This is important for screen readers and to prevent background content from being accessible when the modal is open.
 Modal.setAppElement("#root");
-
+// The Register component handles user registration. It includes a form with validation, a modal for successful registration, and navigation to the login page after registration.
 const Register = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [showPassword, setShowPassword] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false); // State to control the visibility of the registration success modal
+  const navigate = useNavigate(); // Hook from react-router-dom to programmatically navigate to different routes
+  const dispatch = useDispatch(); // Hook from react-redux to dispatch actions to the Redux store, specifically for registering a new user.
+  const [showPassword, setShowPassword] = useState(false); // State to toggle the visibility of the password field (show/hide password)
 
   const nameValidation = Yup.string()
     .matches(

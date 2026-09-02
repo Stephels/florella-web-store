@@ -21,6 +21,14 @@ Florella is a React-based e-commerce storefront for a fictional flower and cake 
 - [Formik](https://formik.org/) + [Yup](https://github.com/jquense/yup) for form handling and validation
 - [React Modal](https://reactcommunity.org/react-modal/) for the registration success popup
 
+## Known Limitations
+
+This is a front-end learning project with no backend or database. Registered
+users (including passwords) are stored only in memory via Redux and are lost
+on page refresh. Passwords are also compared in plain text rather than
+hashed, which would never be acceptable in a production application with
+real user data.
+
 ## Getting Started
 
 ### Prerequisites
